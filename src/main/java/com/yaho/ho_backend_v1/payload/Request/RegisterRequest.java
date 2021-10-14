@@ -20,4 +20,6 @@ public class RegisterRequest {
 
     @Size(min = 1,max = 12)
     private String name;
+
+    private String phoneNumber;
 }
