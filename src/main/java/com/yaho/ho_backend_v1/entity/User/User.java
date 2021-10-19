@@ -19,7 +19,7 @@ public class User {
     private Long userIdx;
 
     @Column(unique = true, name = "id")
-    private String Id;
+    private String Email;
 
     @Column(name = "pw")
     private String Pw;
@@ -27,7 +27,5 @@ public class User {
     @Column(name = "name")
     private String Name;
 
-    @Column(unique = true, name = "phone")
-    private String PhoneNumber;
 
 }
