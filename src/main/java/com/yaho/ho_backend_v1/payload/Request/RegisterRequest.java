@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 @AllArgsConstructor
@@ -12,14 +13,13 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class RegisterRequest {
 
-    @Size(min = 6,max = 10)
-    private String id;
+    @Email
+    private String email;
 
     @Size(min = 8,max = 12)
     private String pw;
 
-    @Size(min = 1,max = 12)
+    @Size(min = 1,max = 10)
     private String name;
 
-    private String phoneNumber;
 }

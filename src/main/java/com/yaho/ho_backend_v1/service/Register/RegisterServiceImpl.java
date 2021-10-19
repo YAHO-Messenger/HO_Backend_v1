@@ -20,10 +20,9 @@ public class RegisterServiceImpl implements RegisterService{
         try {
             userRepository.save(
                     User.builder()
-                            .Id(request.getId())
+                            .Email(request.getEmail())
                             .Pw(passwordEncoder.encode(request.getPw()))
                             .Name(request.getName())
-                            .PhoneNumber(request.getPhoneNumber())
                             .build()
             );
             return "Success";
