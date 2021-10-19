@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "refreshtoken")
 @AllArgsConstructor
 @NoArgsConstructor
-public class RefreshTokenRepository {
+public class RefreshToken {
 
     @Id
     private Long usercode;
