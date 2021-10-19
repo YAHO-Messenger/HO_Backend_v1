@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies{
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.5.5'
     implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     compileOnly group: 'net.nurigo', name: 'javaSDK', version: '2.2'
