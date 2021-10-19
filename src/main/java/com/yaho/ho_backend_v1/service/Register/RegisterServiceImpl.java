@@ -5,6 +5,7 @@ import com.yaho.ho_backend_v1.entity.User.UserRepository;
 import com.yaho.ho_backend_v1.exception.AlreadyUserExistException;
 import com.yaho.ho_backend_v1.payload.Request.RegisterRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class RegisterServiceImpl implements RegisterService{
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public String register(RegisterRequest request){
@@ -19,8 +21,9 @@ public class RegisterServiceImpl implements RegisterService{
             userRepository.save(
                     User.builder()
                             .Id(request.getId())
-                            .Pw(request.getPw())
+                            .Pw(passwordEncoder.encode(request.getPw()))
                             .Name(request.getName())
+                            .PhoneNumber(request.getPhoneNumber())
                             .build()
             );
             return "Success";
