@@ -34,6 +34,8 @@ public class User implements UserDetails {
     @Column(name = "name")
     private String Name;
 
+    private String certification;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private List<String> roles = new ArrayList<>();
