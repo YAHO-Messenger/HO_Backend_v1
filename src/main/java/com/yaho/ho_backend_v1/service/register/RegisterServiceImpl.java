@@ -1,4 +1,4 @@
-package com.yaho.ho_backend_v1.service;
+package com.yaho.ho_backend_v1.service.register;
 
 import com.yaho.ho_backend_v1.entity.User.User;
 import com.yaho.ho_backend_v1.entity.User.UserRepository;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RegisterServiceImpl implements RegisterService{
+public class RegisterServiceImpl implements RegisterService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -21,7 +21,7 @@ public class RegisterServiceImpl implements RegisterService{
             userRepository.save(
                     User.builder()
                             .email(request.getEmail())
-                            .password(passwordEncoder.encode(request.getPw()))
+                            .password(passwordEncoder.encode(request.getPassword()))
                             .name(request.getName())
                             .build()
             );

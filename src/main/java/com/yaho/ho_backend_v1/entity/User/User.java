@@ -11,55 +11,47 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
-@Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@Table(name= " user")
 public class User implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(unique = true, name = "id")
-    private String Email;
+    @Column(unique = true)
+    private String email;
 
-    @Column(name = "pw")
-    private String Pw;
+    private String password;
 
-    @Column(name = "name")
-    private String Name;
-
-    private String certification;
+    private String name;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private List<String> roles = new ArrayList<>();
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Collection<? extends GrantedAuthority> getAuthorities(){
         return this.roles.stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public String getUsername() {
-        return Email;
+    public String getUsername(){
+        return email;
     }
 
     @Override
-    public boolean isAccountNonExpired() {
+    public boolean isAccountNonExpired(){
         return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return false;
     }
 
     @Override
@@ -71,6 +63,4 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-
 }
