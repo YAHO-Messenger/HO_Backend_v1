@@ -1,4 +1,4 @@
-package com.yaho.ho_backend_v1.service;
+package com.yaho.ho_backend_v1.service.user;
 
 import com.yaho.ho_backend_v1.entity.User.UserRepository;
 import lombok.RequiredArgsConstructor;
