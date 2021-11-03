@@ -1,9 +1,9 @@
-package com.yaho.ho_backend_v1.service.Register;
+package com.yaho.ho_backend_v1.service;
 
 import com.yaho.ho_backend_v1.entity.User.User;
 import com.yaho.ho_backend_v1.entity.User.UserRepository;
 import com.yaho.ho_backend_v1.exception.AlreadyUserExistException;
-import com.yaho.ho_backend_v1.payload.Request.RegisterRequest;
+import com.yaho.ho_backend_v1.payload.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,9 +20,9 @@ public class RegisterServiceImpl implements RegisterService{
         try {
             userRepository.save(
                     User.builder()
-                            .Email(request.getEmail())
-                            .Pw(passwordEncoder.encode(request.getPw()))
-                            .Name(request.getName())
+                            .email(request.getEmail())
+                            .password(passwordEncoder.encode(request.getPw()))
+                            .name(request.getName())
                             .build()
             );
             return "Success";
