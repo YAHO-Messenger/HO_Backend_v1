@@ -26,8 +26,6 @@ public class User implements UserDetails {
 
     private String password;
 
-    private String name;
-
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private List<String> roles = new ArrayList<>();
