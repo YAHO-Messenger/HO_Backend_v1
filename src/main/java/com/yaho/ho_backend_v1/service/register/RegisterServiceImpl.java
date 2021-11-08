@@ -22,7 +22,6 @@ public class RegisterServiceImpl implements RegisterService {
                     User.builder()
                             .email(request.getEmail())
                             .password(passwordEncoder.encode(request.getPassword()))
-                            .name(request.getName())
                             .build()
             );
             return "Success";
