@@ -18,7 +18,5 @@ public class RegisterRequest {
     @Size(min = 8,max = 12)
     private String password;
 
-    @Size(min = 1,max = 10)
-    private String name;
 
 }
