@@ -1,4 +1,4 @@
-package com.yaho.ho_backend_v1.Config.websocket;
+package com.yaho.ho_backend_v1.config.websocket;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
