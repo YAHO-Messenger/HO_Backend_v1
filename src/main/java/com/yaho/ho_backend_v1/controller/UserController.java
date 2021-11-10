@@ -20,6 +20,11 @@ public class UserController {
 
     private final RegisterService registerService;
 
+    @RequestMapping("/")
+    public String main(){
+        return "아직 만드는중";
+    }
+
     @PostMapping("/Register")
     public String register(@RequestBody @Valid RegisterRequest request) {
         return registerService.register(request);
