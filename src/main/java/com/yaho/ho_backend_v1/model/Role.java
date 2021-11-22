@@ -2,9 +2,15 @@ package com.yaho.ho_backend_v1.model;
 
 
 
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
 @Table(name = "roles")
 public class Role {
     @Id
