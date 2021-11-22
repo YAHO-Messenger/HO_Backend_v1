@@ -5,12 +5,15 @@ import lombok.Builder;
 import lombok.Getter;
 import org.springframework.web.socket.WebSocketSession;
 
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
 @Getter
 public class ChatRoom {
     private String roomId;
+
+    @Size(min = 2,max = 15)
     private String name;
     private Set<WebSocketSession> sessions = new HashSet<>();
 
