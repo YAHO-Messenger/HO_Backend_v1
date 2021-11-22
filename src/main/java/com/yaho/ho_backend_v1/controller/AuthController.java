@@ -6,7 +6,6 @@ import com.yaho.ho_backend_v1.exception.TokenRefreshException;
 import com.yaho.ho_backend_v1.jwt.JwtUtils;
 import com.yaho.ho_backend_v1.model.ERole;
 import com.yaho.ho_backend_v1.model.RefreshToken;
-import com.yaho.ho_backend_v1.model.Role;
 import com.yaho.ho_backend_v1.model.User;
 import com.yaho.ho_backend_v1.payload.request.LoginRequest;
 import com.yaho.ho_backend_v1.payload.request.SignupRequest;
@@ -28,9 +27,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -90,11 +87,8 @@ public class AuthController {
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()), ERole.ROLE_USER);
 
+
         userRepository.save(user);
-
-
-
-
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }

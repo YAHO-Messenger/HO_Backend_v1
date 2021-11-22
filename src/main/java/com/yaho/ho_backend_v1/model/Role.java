@@ -1,7 +1,6 @@
 package com.yaho.ho_backend_v1.model;
 
 
-
 import lombok.*;
 
 import javax.persistence.*;
