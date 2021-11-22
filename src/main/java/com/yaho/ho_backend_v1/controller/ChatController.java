@@ -1,7 +1,8 @@
 package com.yaho.ho_backend_v1.controller;
 
 import com.yaho.ho_backend_v1.dto.ChatRoom;
-import com.yaho.ho_backend_v1.service.websocket.ChatService;
+
+import com.yaho.ho_backend_v1.service.chat.ChatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
