@@ -33,6 +33,9 @@ public class User {
     @Size(max = 120)
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private ERole role;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -42,10 +45,11 @@ public class User {
     public User() {
     }
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, ERole role) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public Long getId() {
