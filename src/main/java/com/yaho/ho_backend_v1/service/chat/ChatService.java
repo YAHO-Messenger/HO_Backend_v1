@@ -1,4 +1,4 @@
-package com.yaho.ho_backend_v1.service.websocket;
+package com.yaho.ho_backend_v1.service.chat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yaho.ho_backend_v1.dto.ChatRoom;
