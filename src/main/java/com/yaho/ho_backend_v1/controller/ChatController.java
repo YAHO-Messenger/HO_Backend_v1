@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/chat")
+@RequestMapping("api/auth/chat")
 public class ChatController {
 
     private final ChatService chatService;
